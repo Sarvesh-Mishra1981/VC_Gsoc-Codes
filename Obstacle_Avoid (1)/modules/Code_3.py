@@ -12,13 +12,14 @@ def main(inputs, outputs, parameters, synchronise):
             avg_force_y = float(car_force[1]) + float(obs_force[1])
 
             v = 3.0
-            w = avg_force_y * 0.5
 
-            if w > 1.5:
-                w = 1.5
+            w = avg_force_y * 0.25
 
-            if w < -1.5:
-                w = -1.5
+            if w > 0.8:
+                w = 0.8
+
+            if w < -0.8:
+                w = -0.8
 
             last_velocity = [
                 v,
